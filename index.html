@@ -15,10 +15,10 @@
      No transitions on hover: e-ink doesn't fade, it snaps.
      ------------------------------------------------------------------ */
   :root {
-    --paper: #FFFFFF;
-    --ink: #000000;
-    --gray: #BBBBBB;
-    --faint: #F2F2F2;
+    --paper: #000000;   /* background — now black */
+    --ink: #FFFFFF;      /* primary text/lines — now white */
+    --gray: #8A8A8A;     /* muted secondary text, tuned for a dark background */
+    --faint: #161616;    /* subtle hover fill */
     --mono: "IBM Plex Mono", monospace;
     --sans: "Public Sans", -apple-system, sans-serif;
   }
@@ -72,6 +72,21 @@
   .hero {
     padding: 48px 0 72px;
   }
+  .hero-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .coffee {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    text-decoration: none;
+    border: 1.5px solid var(--ink);
+    padding: 8px 16px;
+  }
+  .coffee:hover { background: var(--ink); color: var(--paper); }
   .hero .wrap {
     display: grid;
     grid-template-columns: 1fr 260px;
@@ -183,7 +198,57 @@
     border: 1.5px solid var(--ink);
     padding: 3px 10px;
     margin-top: 24px;
+    text-decoration: none;
   }
+  a.badge:hover { background: var(--ink); color: var(--paper); }
+
+  /* muted "coming soon" style for links not yet live */
+  .soon {
+    color: var(--gray);
+    font-family: var(--mono);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* ---------- video channels ---------- */
+  .channels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .channel-video {
+    border: 2px solid var(--ink);
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    overflow: hidden;
+    background:
+      repeating-linear-gradient(45deg, var(--faint) 0 2px, var(--paper) 2px 10px);
+  }
+  .channel-video span {
+    font-family: var(--mono);
+    font-size: 12px;
+    background: var(--paper);
+    padding: 4px 8px;
+    color: var(--gray);
+  }
+  .channel-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .channel-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 4px 0;
+  }
+  .channel-name { font-weight: 700; font-size: 17px; }
 
   /* ---------- music ---------- */
   .songs { list-style: none; }
@@ -217,7 +282,7 @@
     text-align: center;
     padding: 12px;
     background:
-      repeating-linear-gradient(45deg, var(--faint) 0 2px, var(--paper) 2px 8px);
+      repeating-linear-gradient(45deg, var(--faint) 0 2px, var(--paper) 2px 10px);
   }
   .tile span {
     font-family: var(--mono);
@@ -257,6 +322,7 @@
     .device { max-width: 260px; }
     .projects li { grid-template-columns: 1fr; gap: 4px; }
     .grid { grid-template-columns: 1fr 1fr; }
+    .channels { grid-template-columns: 1fr; }
   }
   @media (max-width: 460px) {
     .grid { grid-template-columns: 1fr; }
@@ -276,6 +342,7 @@
   <div class="hero">
     <div class="wrap">
       <div>
+        <img class="hero-logo" src="logo.png" alt="Daily Hobbyist logo — a mountain range inside a gold diamond with a cross, established 2018">
         <h1>Made by hand,<br>one hobby at a time.</h1>
         <p>Apps for the Light Phone 3, desktop tools, songs, art, and videos. <span class="dim">Everything on this page was built for the joy of building it.</span></p>
       </div>
@@ -285,8 +352,8 @@
           <li><a href="#apps">Light Phone Apps</a></li>
           <li><a href="#bump">Bump</a></li>
           <li><a href="#music">Music</a></li>
-          <li><a href="#art">Art</a></li>
           <li><a href="#videos">Videos</a></li>
+          <li><a href="#art">Art</a></li>
           <li><a href="#else">Everything Else</a></li>
         </ul>
         <div class="device-home"></div>
@@ -303,30 +370,30 @@
         <li>
           <span><span class="name">Lists</span><span class="ver">v2.2</span></span>
           <span class="desc">Nested lists for everything — groceries, projects, ideas inside ideas.</span>
-          <a class="link" href="https://github.com/cmg-ops">GitHub &rarr;</a>
+          <a class="link" href="https://github.com/cmg-ops/LP3-Lists">GitHub &rarr;</a>
         </li>
         <li>
           <span><span class="name">Bible</span><span class="ver">v2.0</span></span>
           <span class="desc">Scripture reading on a screen made for reading.</span>
-          <a class="link" href="https://github.com/cmg-ops">GitHub &rarr;</a>
+          <a class="link" href="https://github.com/cmg-ops/LP3-Bible">GitHub &rarr;</a>
         </li>
         <li>
           <span><span class="name">Stopwatch</span></span>
           <span class="desc">A stopwatch. It starts, it stops. That's the point.</span>
-          <a class="link" href="https://github.com/cmg-ops">GitHub &rarr;</a>
+          <a class="link" href="https://github.com/cmg-ops/LP3-StopWatch">GitHub &rarr;</a>
         </li>
         <li>
           <span><span class="name">Checkbook</span></span>
           <span class="desc">Track spending the old-fashioned way, on a new-fashioned phone.</span>
-          <a class="link" href="https://github.com/cmg-ops">GitHub &rarr;</a>
+          <span class="link soon">Coming soon</span>
         </li>
         <li>
           <span><span class="name">Alarm Clock</span></span>
           <span class="desc">Wake up on time without waking up to everything else.</span>
-          <a class="link" href="https://github.com/cmg-ops">GitHub &rarr;</a>
+          <span class="link soon">Coming soon</span>
         </li>
       </ul>
-      <span class="badge">Featured in the awesome-light directory</span>
+      <a class="badge" href="https://awesome-light.garado.dev/">Featured in the awesome-light directory &rarr;</a>
     </div>
   </section>
 
@@ -335,6 +402,7 @@
       <p class="eyebrow">Desktop &middot; Mac &amp; Windows</p>
       <h2>Bump</h2>
       <p class="section-intro">A daily task planner that breaks big tasks into recursive baby steps, so the next thing to do is always small enough to actually do. Also available for the Light Phone 3.</p>
+      <span class="badge">Coming soon</span>
     </div>
   </section>
 
@@ -342,7 +410,7 @@
     <div class="wrap">
       <p class="eyebrow">Songwriting &middot; Suno</p>
       <h2>Music</h2>
-      <p class="section-intro">Original Christian songs — epic battle rock, worship, and narrative songs straight from the pages of Scripture.</p>
+      <p class="section-intro">Original Christian songs — epic battle rock, worship, and narrative songs straight from the pages of Scripture. <a href="https://suno.com/@praiselaiddown">Listen on Suno &rarr;</a></p>
       <ul class="songs">
         <li><span class="title">Behind Him We Ride</span><span class="kind">Battle rock</span></li>
         <li><span class="title">One Puts a Thousand</span><span class="kind">Battle rock</span></li>
@@ -350,6 +418,34 @@
         <li><span class="title">The Story of Joseph</span><span class="kind">Narrative</span></li>
         <li><span class="title">Elijah</span><span class="kind">Narrative</span></li>
       </ul>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="wrap">
+      <p class="eyebrow">YouTube</p>
+      <h2>Videos</h2>
+      <p class="section-intro">Trying every hobby and sharing the process along the way — across two channels.</p>
+      <div class="channels">
+        <div class="channel">
+          <div class="channel-video">
+            <span>Featured video coming soon</span>
+          </div>
+          <div class="channel-meta">
+            <span class="channel-name">DailyHobbyist</span>
+            <a class="link" href="https://www.youtube.com/@DailyHobbyist">Visit channel &rarr;</a>
+          </div>
+        </div>
+        <div class="channel">
+          <div class="channel-video">
+            <span>Featured video coming soon</span>
+          </div>
+          <div class="channel-meta">
+            <span class="channel-name">Praise Laid Down</span>
+            <a class="link" href="https://www.youtube.com/channel/UCwA8ZaH-0sTGJNcBJbpRFKw">Visit channel &rarr;</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -366,25 +462,14 @@
     </div>
   </section>
 
-  <section id="videos">
-    <div class="wrap">
-      <p class="eyebrow">YouTube</p>
-      <h2>Videos</h2>
-      <p class="section-intro">Trying every hobby and sharing the process along the way. <a href="https://www.youtube.com/@DailyHobbyist">Watch on YouTube &rarr;</a></p>
-      <div class="grid">
-        <div class="tile"><span>Video 1</span></div>
-        <div class="tile"><span>Video 2</span></div>
-        <div class="tile"><span>Video 3</span></div>
-      </div>
-    </div>
-  </section>
-
   <section id="else">
     <div class="wrap">
       <p class="eyebrow">The workbench</p>
       <h2>Everything Else</h2>
       <div class="else-box">
         <p>New experiments land here first — prototypes, one-off tools, and whatever hobby comes next. <span class="dim">Check back anytime.</span></p>
+        <p style="margin-top:20px;">Everything here is made for the love of making it. If something helped you, you can <a href="https://buymeacoffee.com/dailyhobbyist">buy me a coffee</a> to keep the hobbies going.</p>
+        <a class="coffee" href="https://buymeacoffee.com/dailyhobbyist" style="margin-top:16px;">&#9749; Buy me a coffee</a>
       </div>
     </div>
   </section>
@@ -392,7 +477,8 @@
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 DailyHobbyist</span>
+    <span>DailyHobbyist &middot; est. 2018</span>
+    <a href="https://buymeacoffee.com/dailyhobbyist">buy me a coffee</a>
     <a href="https://www.youtube.com/@DailyHobbyist">youtube.com/@DailyHobbyist</a>
     <a href="https://github.com/cmg-ops">github.com/cmg-ops</a>
   </div>
