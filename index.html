@@ -87,6 +87,12 @@
     padding: 8px 16px;
   }
   .coffee:hover { background: var(--ink); color: var(--paper); }
+  .support {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
   .hero .wrap {
     display: grid;
     grid-template-columns: 1fr 260px;
@@ -222,10 +228,39 @@
   .channels {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 28px;
+  }
+  .channel {
+    border: 2px solid var(--ink);
+    padding: 18px;
+  }
+  .channel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .channel-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #C9A24B;
+    letter-spacing: 0.1em;
+  }
+  .channel-name {
+    font-weight: 800;
+    font-size: 21px;
+    display: block;
+  }
+  .channel-focus {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray);
+    display: block;
+    margin-top: 2px;
   }
   .channel-video {
-    border: 2px solid var(--ink);
+    border: 1px solid var(--ink);
     aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
@@ -250,13 +285,9 @@
     display: block;
   }
   .channel-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding: 12px 4px 0;
+    padding: 14px 2px 0;
   }
-  .channel-name { font-weight: 700; font-size: 17px; }
+  .channel-meta .link { font-family: var(--mono); font-size: 13px; }
 
   /* ---------- music ---------- */
   .songs { list-style: none; }
@@ -363,6 +394,7 @@
           <li><a href="#videos">Videos</a></li>
           <li><a href="#bump">Bump</a></li>
           <li><a href="#art">Art</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#else">Everything Else</a></li>
         </ul>
         <div class="device-home"></div>
@@ -425,24 +457,36 @@
     <div class="wrap">
       <p class="eyebrow">YouTube</p>
       <h2>Videos</h2>
-      <p class="section-intro">Trying every hobby and sharing the process along the way — across two channels.</p>
+      <p class="section-intro">Two channels, two different corners of the hobby.</p>
       <div class="channels">
         <div class="channel">
+          <div class="channel-head">
+            <div>
+              <span class="channel-name">DailyHobbyist</span>
+              <span class="channel-focus">Trying every hobby, sharing the process</span>
+            </div>
+            <span class="channel-num">CH 01</span>
+          </div>
           <div class="channel-video">
             <iframe src="https://www.youtube.com/embed/d72qdTPXn0I" title="DailyHobbyist featured video" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="channel-meta">
-            <span class="channel-name">DailyHobbyist</span>
-            <a class="link" href="https://www.youtube.com/@DailyHobbyist">Visit channel &rarr;</a>
+            <a class="link" href="https://www.youtube.com/@DailyHobbyist">Visit DailyHobbyist &rarr;</a>
           </div>
         </div>
         <div class="channel">
+          <div class="channel-head">
+            <div>
+              <span class="channel-name">Praise Laid Down</span>
+              <span class="channel-focus">Worship music for Jesus Christ</span>
+            </div>
+            <span class="channel-num">CH 02</span>
+          </div>
           <div class="channel-video">
             <iframe src="https://www.youtube.com/embed/SVS2tDT2E_w" title="Praise Laid Down featured video" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="channel-meta">
-            <span class="channel-name">Praise Laid Down</span>
-            <a class="link" href="https://www.youtube.com/channel/UCwA8ZaH-0sTGJNcBJbpRFKw">Visit channel &rarr;</a>
+            <a class="link" href="https://www.youtube.com/channel/UCwA8ZaH-0sTGJNcBJbpRFKw">Visit Praise Laid Down &rarr;</a>
           </div>
         </div>
       </div>
@@ -471,14 +515,25 @@
     </div>
   </section>
 
+  <section id="blog">
+    <div class="wrap">
+      <p class="eyebrow">Since 2018</p>
+      <h2>Blog</h2>
+      <p class="section-intro">Where it all started — years of trying unique hobbies and writing about them: butcherblock shelves, a backyard catio, biking to work for a month, blizzard time-lapses, and more. <a href="https://strangehobbiesblog.wordpress.com/">Read the archives &rarr;</a></p>
+    </div>
+  </section>
+
   <section id="else">
     <div class="wrap">
       <p class="eyebrow">The workbench</p>
       <h2>Everything Else</h2>
       <div class="else-box">
         <p>New experiments land here first — prototypes, one-off tools, and whatever hobby comes next. <span class="dim">Check back anytime.</span></p>
-        <p style="margin-top:20px;">Everything here is made for the love of making it. If something helped you, you can <a href="https://buymeacoffee.com/dailyhobbyist">buy me a coffee</a> to keep the hobbies going.</p>
-        <a class="coffee" href="https://buymeacoffee.com/dailyhobbyist" style="margin-top:16px;">&#9749; Buy me a coffee</a>
+        <p style="margin-top:20px;">Everything here is made for the love of making it. If something helped you, you can support the hobbies:</p>
+        <div class="support">
+          <a class="coffee" href="https://buymeacoffee.com/dailyhobbyist">&#9749; Buy me a coffee</a>
+          <a class="coffee" href="https://patreon.com/Dailyhobbyist">&#9733; Patreon</a>
+        </div>
       </div>
     </div>
   </section>
@@ -488,6 +543,7 @@
   <div class="wrap">
     <span>DailyHobbyist &middot; est. 2018</span>
     <a href="https://buymeacoffee.com/dailyhobbyist">buy me a coffee</a>
+    <a href="https://patreon.com/Dailyhobbyist">patreon</a>
     <a href="https://www.youtube.com/@DailyHobbyist">youtube.com/@DailyHobbyist</a>
     <a href="https://github.com/cmg-ops">github.com/cmg-ops</a>
   </div>
