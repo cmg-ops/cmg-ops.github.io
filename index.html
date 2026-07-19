@@ -216,25 +216,17 @@
   }
   a.badge:hover { background: var(--ink); color: var(--paper); }
 
-  /* ---------- app showcase ---------- */
-  .showcase {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 36px;
+  /* ---------- app screenshot rows ---------- */
+  .projects li.shot-row {
+    display: block;
+    padding: 4px 10px 20px;
   }
-  .showcase figure { margin: 0; }
-  .showcase img {
+  .projects li.shot-row:hover { background: none; }
+  .projects li.shot-row img {
     width: 100%;
     height: auto;
     display: block;
     border: 2px solid var(--ink);
-  }
-  .showcase figcaption {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--gray);
-    margin-top: 10px;
   }
 
   /* muted "coming soon" style for links not yet live */
@@ -434,15 +426,24 @@
           <span class="desc">Nested lists for everything — groceries, projects, ideas inside ideas.</span>
           <a class="link" href="https://github.com/cmg-ops/LP3-Lists">GitHub &rarr;</a>
         </li>
+        <li class="shot-row">
+          <img src="lists-showcase.png" alt="Lists app running on the Light Phone 3 — nested lists, a family list, and a to-do list with A/B/C priority letters" loading="lazy">
+        </li>
         <li>
           <span><span class="name">Bible</span><span class="ver">v2.0</span></span>
           <span class="desc">Scripture reading on a screen made for reading.</span>
           <a class="link" href="https://github.com/cmg-ops/LP3-Bible">GitHub &rarr;</a>
         </li>
+        <li class="shot-row">
+          <img src="bible-showcase.png" alt="Bible app running on the Light Phone 3 — testament menu, book list, chapter grid, and ESV reading view" loading="lazy">
+        </li>
         <li>
           <span><span class="name">Stopwatch</span></span>
           <span class="desc">A stopwatch. It starts, it stops. That's the point.</span>
           <a class="link" href="https://github.com/cmg-ops/LP3-StopWatch">GitHub &rarr;</a>
+        </li>
+        <li class="shot-row">
+          <img src="stopwatch-showcase.png" alt="Stopwatch app running on the Light Phone 3 — timer, lap splits with best and slowest marked, and dated history" loading="lazy">
         </li>
         <li>
           <span><span class="name">Checkbook</span></span>
@@ -455,20 +456,6 @@
           <span class="link soon">Coming soon</span>
         </li>
       </ul>
-      <div class="showcase">
-        <figure>
-          <img src="shots/lists-showcase.png" alt="Lists app running on the Light Phone 3 — nested lists, a family list, and a to-do list with A/B/C priority letters" loading="lazy">
-          <figcaption>Lists — nested lists with priority sorting</figcaption>
-        </figure>
-        <figure>
-          <img src="shots/bible-showcase.png" alt="Bible app running on the Light Phone 3 — testament menu, book list, chapter grid, and ESV reading view" loading="lazy">
-          <figcaption>Bible — ESV reading, book by book</figcaption>
-        </figure>
-        <figure>
-          <img src="shots/stopwatch-showcase.png" alt="Stopwatch app running on the Light Phone 3 — timer, lap splits with best and slowest marked, and dated history" loading="lazy">
-          <figcaption>Stopwatch — laps, splits, and saved history</figcaption>
-        </figure>
-      </div>
       <a class="badge" href="https://awesome-light.garado.dev/">Featured in the awesome-light directory &rarr;</a>
     </div>
   </section>
