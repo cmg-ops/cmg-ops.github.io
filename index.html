@@ -216,6 +216,27 @@
   }
   a.badge:hover { background: var(--ink); color: var(--paper); }
 
+  /* ---------- app showcase ---------- */
+  .showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .showcase figure { margin: 0; }
+  .showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--ink);
+  }
+  .showcase figcaption {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 10px;
+  }
+
   /* muted "coming soon" style for links not yet live */
   .soon {
     color: var(--gray);
@@ -434,6 +455,20 @@
           <span class="link soon">Coming soon</span>
         </li>
       </ul>
+      <div class="showcase">
+        <figure>
+          <img src="shots/lists-showcase.png" alt="Lists app running on the Light Phone 3 — nested lists, a family list, and a to-do list with A/B/C priority letters" loading="lazy">
+          <figcaption>Lists — nested lists with priority sorting</figcaption>
+        </figure>
+        <figure>
+          <img src="shots/bible-showcase.png" alt="Bible app running on the Light Phone 3 — testament menu, book list, chapter grid, and ESV reading view" loading="lazy">
+          <figcaption>Bible — ESV reading, book by book</figcaption>
+        </figure>
+        <figure>
+          <img src="shots/stopwatch-showcase.png" alt="Stopwatch app running on the Light Phone 3 — timer, lap splits with best and slowest marked, and dated history" loading="lazy">
+          <figcaption>Stopwatch — laps, splits, and saved history</figcaption>
+        </figure>
+      </div>
       <a class="badge" href="https://awesome-light.garado.dev/">Featured in the awesome-light directory &rarr;</a>
     </div>
   </section>
